@@ -1,6 +1,8 @@
 # 🎙️ Sports Commentator from Video  
 **Capstone Project – CS[05]**
 
+https://github.com/anonymousgirl123/ai_commentary_generator/wiki
+
 An AI-powered system that generates **timestamped, broadcast-style sports commentary** from raw video using a **two-stage Large Language Model (LLM) pipeline**.
 
 ---
