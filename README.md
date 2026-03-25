@@ -5,7 +5,7 @@ https://github.com/anonymousgirl123/ai_commentary_generator/wiki
 
 An AI-powered system that generates **timestamped, broadcast-style sports commentary** from raw video using a **two-stage Large Language Model (LLM) pipeline**.
 
----
+--- 
 
 ## 🚀 Overview
 
@@ -44,7 +44,6 @@ LLM-2 (Gemini Pro) → Commentary Script
 TTS (Optional)
 ↓
 Output (Text + Audio)
-
 
 ---
 
