@@ -136,9 +136,12 @@ Feedback
 Rate (1–5 stars)
 Optional comment
 💻 Option B – Direct CLI (Advanced)
+
 Basic:
 ```python main.py --video match.mp4 --api_key YOUR_KEY_HERE```
+
 Full Example:
+
 ``` python main.py \
   --video       match.mp4 \
   --api_key     YOUR_KEY_HERE \
@@ -149,6 +152,7 @@ Full Example:
   --context     "Semi-final, 0-0 at kick-off" \
   --output      commentary_output.txt \
   --tts
+
 🧾 Arguments
 Argument	Description
 --video	Input video path (required)
