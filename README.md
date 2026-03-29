@@ -50,7 +50,7 @@ Output (Text + Audio)
 ---
 
 ## 📦 Project Structure
-
+```
 .
 ├── video_processor.py # Frame extraction & encoding
 ├── commentary_generator.py # Two-LLM pipeline
@@ -59,7 +59,7 @@ Output (Text + Audio)
 ├── main.py # Entry point
 └── .env # API keys
 
-
+```
 
 ---
 
