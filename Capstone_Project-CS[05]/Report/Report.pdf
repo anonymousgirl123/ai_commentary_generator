@@ -1,0 +1,218 @@
+%PDF-1.4
+1 0 obj
+<<
+/Type /Catalog
+/Pages 2 0 R
+>>
+endobj
+2 0 obj
+<<
+/Type /Pages
+/Kids [6 0 R 8 0 R 10 0 R]
+/Count 3
+>>
+endobj
+3 0 obj
+<<
+/Type /Font
+/Subtype /Type1
+/BaseFont /Helvetica
+>>
+endobj
+4 0 obj
+<<
+/Type /Font
+/Subtype /Type1
+/BaseFont /Helvetica-Bold
+>>
+endobj
+5 0 obj
+<<
+/Length 4820
+>>
+stream
+BT /F2 18 Tf 54 738.0 Td (Sports Commentator from Video) Tj ET
+BT /F1 13 Tf 54 716.0 Td (Capstone Project ? CS[05]) Tj ET
+BT /F2 12 Tf 54 691.0 Td (Abstract) Tj ET
+BT /F1 10 Tf 54 675.0 Td (This project presents an automated sports commentary generation system that analyses) Tj ET
+BT /F1 10 Tf 54 663.0 Td (sports video footage and produces timestamped, broadcast-style commentary using a two-) Tj ET
+BT /F1 10 Tf 54 651.0 Td (stage Large Language Model \(LLM\) pipeline. The system accepts any sports video as input) Tj ET
+BT /F1 10 Tf 54 639.0 Td (and outputs a structured commentary script with per-second timestamps. In Stage 1,) Tj ET
+BT /F1 10 Tf 54 627.0 Td (keyframes are extracted from the video at configurable intervals using OpenCV, and each) Tj ET
+BT /F1 10 Tf 54 615.0 Td (frame is analysed by Gemini 2.5 Flash \(LLM-1\), a multimodal vision model, which generates) Tj ET
+BT /F1 10 Tf 54 603.0 Td (concise factual scene descriptions. In Stage 2, all scene descriptions are aggregated and) Tj ET
+BT /F1 10 Tf 54 591.0 Td (passed to Gemini 2.5 Pro \(LLM-2\), which synthesises a full, engaging commentary script) Tj ET
+BT /F1 10 Tf 54 579.0 Td (mimicking a live sports broadcaster. The system also includes optional text-to-speech) Tj ET
+BT /F1 10 Tf 54 567.0 Td (synthesis and an interactive terminal dashboard for ease of use. Two commentary modes are) Tj ET
+BT /F1 10 Tf 54 555.0 Td (supported: Live mode for dense real-time coverage and Highlight mode for post-game) Tj ET
+BT /F1 10 Tf 54 543.0 Td (summaries. The project demonstrates the effectiveness of chaining multimodal and language) Tj ET
+BT /F1 10 Tf 54 531.0 Td (models for automated media content generation.) Tj ET
+BT /F2 12 Tf 54 511.0 Td (1. Introduction) Tj ET
+BT /F2 10 Tf 64 493.0 Td (Context) Tj ET
+BT /F1 10 Tf 74 480.0 Td (Sports broadcasting relies heavily on expert human commentators to describe game events) Tj ET
+BT /F1 10 Tf 74 468.0 Td (in real time. With advances in AI, particularly multimodal large language models, it is) Tj ET
+BT /F1 10 Tf 74 456.0 Td (now feasible to automate this process. This project explores building an end-to-end) Tj ET
+BT /F1 10 Tf 74 444.0 Td (pipeline that takes raw sports video as input and generates professional-grade) Tj ET
+BT /F1 10 Tf 74 432.0 Td (commentary text and audio without human intervention.) Tj ET
+BT /F2 10 Tf 64 420.0 Td (Motivation) Tj ET
+BT /F1 10 Tf 74 407.0 Td (The growing volume of sports content ? including amateur recordings, training sessions,) Tj ET
+BT /F1 10 Tf 74 395.0 Td (and international matches ? creates demand for scalable, automated commentary tools.) Tj ET
+BT /F1 10 Tf 74 383.0 Td (Existing solutions require expensive proprietary systems. This project demonstrates a) Tj ET
+BT /F1 10 Tf 74 371.0 Td (practical, open-API-based alternative using state-of-the-art Gemini models.) Tj ET
+BT /F2 12 Tf 54 351.0 Td (2. Problem Statement) Tj ET
+BT /F1 10 Tf 74 333.0 Td (Sports videos recorded without a commentary track lack the narrative context that makes) Tj ET
+BT /F1 10 Tf 74 321.0 Td (them engaging for viewers. Manually adding commentary is time-consuming and requires) Tj ET
+BT /F1 10 Tf 74 309.0 Td (domain expertise. The problem is to automatically generate accurate, exciting, and) Tj ET
+BT /F1 10 Tf 74 297.0 Td (temporally-aligned commentary from a raw sports video using AI, without any pre-existing) Tj ET
+BT /F1 10 Tf 74 285.0 Td (audio or metadata.) Tj ET
+BT /F2 12 Tf 54 265.0 Td (3. Objectives) Tj ET
+BT /F1 10 Tf 74 247.0 Td (? Extract keyframes from sports video at configurable time intervals.) Tj ET
+BT /F1 10 Tf 74 235.0 Td (? Identify key game events in each frame using a multimodal vision LLM.) Tj ET
+BT /F1 10 Tf 74 223.0 Td (? Generate broadcast-style commentary with timestamps using a language LLM.) Tj ET
+BT /F1 10 Tf 74 211.0 Td (? Support both live \(dense\) and highlight \(sparse\) commentary modes.) Tj ET
+BT /F1 10 Tf 74 199.0 Td (? Provide optional text-to-speech synthesis for audio output.) Tj ET
+BT /F1 10 Tf 74 187.0 Td (? Deliver an interactive terminal dashboard for ease of use.) Tj ET
+BT /F1 10 Tf 74 175.0 Td (? Accept any sport type and team names as configurable parameters.) Tj ET
+BT /F2 12 Tf 54 155.0 Td (4. Methodology) Tj ET
+BT /F2 10 Tf 64 137.0 Td (Tools & Technologies) Tj ET
+BT /F1 10 Tf 74 124.0 Td (Python 3.9+, OpenCV \(cv2\) for video processing and frame extraction, Google Gemini API) Tj ET
+BT /F1 10 Tf 74 112.0 Td (via google-genai SDK for LLM inference, macOS built-in 'say' command for TTS, python-) Tj ET
+BT /F1 10 Tf 74 100.0 Td (dotenv for API key management, and ANSI escape codes for the terminal dashboard UI.) Tj ET
+BT /F2 10 Tf 64 88.0 Td (LLM Justification) Tj ET
+BT /F1 10 Tf 74 75.0 Td (LLM-1: Gemini 2.5 Flash ? chosen for its multimodal \(vision+text\) capability, fast) Tj ET
+endstream
+endobj
+6 0 obj
+<<
+/Type /Page
+/Parent 2 0 R
+/MediaBox [0 0 612 792]
+/Contents 5 0 R
+/Resources <<
+  /Font <<
+    /F1 3 0 R
+    /F2 4 0 R
+  >>
+>>
+>>
+endobj
+7 0 obj
+<<
+/Length 5071
+>>
+stream
+BT /F1 10 Tf 74 738.0 Td (inference speed, and cost efficiency, making it ideal for processing multiple keyframes) Tj ET
+BT /F1 10 Tf 74 726.0 Td (sequentially. LLM-2: Gemini 2.5 Pro ? chosen for superior language generation quality,) Tj ET
+BT /F1 10 Tf 74 714.0 Td (larger context window, and ability to synthesise coherent, creative broadcast prose from) Tj ET
+BT /F1 10 Tf 74 702.0 Td (structured scene descriptions. Using two distinct model families \(Flash for vision) Tj ET
+BT /F1 10 Tf 74 690.0 Td (speed, Pro for language quality\) provides clear role separation and satisfies the two-) Tj ET
+BT /F1 10 Tf 74 678.0 Td (LLM requirement.) Tj ET
+BT /F2 10 Tf 64 666.0 Td (Workflow) Tj ET
+BT /F1 10 Tf 74 653.0 Td (Step 1 ? Video Processing: OpenCV loads the video and extracts keyframes at every N) Tj ET
+BT /F1 10 Tf 74 641.0 Td (seconds \(3s in Live mode, 10s in Highlight mode\). Each frame is JPEG-compressed and) Tj ET
+BT /F1 10 Tf 74 629.0 Td (Base64-encoded for API transmission. Step 2 ? Visual Analysis \(LLM-1\): Each keyframe is) Tj ET
+BT /F1 10 Tf 74 617.0 Td (sent to Gemini 2.5 Flash with a structured prompt asking for factual scene description) Tj ET
+BT /F1 10 Tf 74 605.0 Td (including sport type, key action, and visible game context. Step 3 ? Commentary) Tj ET
+BT /F1 10 Tf 74 593.0 Td (Generation \(LLM-2\): All scene descriptions are assembled into a timeline prompt and sent) Tj ET
+BT /F1 10 Tf 74 581.0 Td (to Gemini 2.5 Pro, which generates a full commentary script with [MM:SS] timestamps,) Tj ET
+BT /F1 10 Tf 74 569.0 Td (excitement, team references, and a final match summary. Step 4 ? TTS \(Optional\): The) Tj ET
+BT /F1 10 Tf 74 557.0 Td (commentary text is cleaned and spoken aloud using platform-native TTS at 210 wpm to) Tj ET
+BT /F1 10 Tf 74 545.0 Td (mimic broadcast energy. Step 5 ? Dashboard: An interactive terminal UI guides) Tj ET
+BT /F1 10 Tf 74 533.0 Td (configuration, displays results, and collects user feedback.) Tj ET
+BT /F2 10 Tf 64 521.0 Td (Modules) Tj ET
+BT /F1 10 Tf 74 508.0 Td (video_processor.py ? frame extraction and Base64 encoding. commentary_generator.py ?) Tj ET
+BT /F1 10 Tf 74 496.0 Td (two-LLM pipeline \(LLM-1 vision analysis, LLM-2 commentary\). tts_engine.py ? cross-) Tj ET
+BT /F1 10 Tf 74 484.0 Td (platform speech synthesis. dashboard.py ? interactive terminal dashboard with ANSI) Tj ET
+BT /F1 10 Tf 74 472.0 Td (colour UI. main.py ? CLI entry point orchestrating all modules.) Tj ET
+BT /F2 12 Tf 54 452.0 Td (5. Results and Analysis) Tj ET
+BT /F2 10 Tf 64 434.0 Td (Sample Output) Tj ET
+BT /F1 10 Tf 74 421.0 Td (Input: 30-second football goal scene video.) Tj ET
+BT /F1 10 Tf 74 409.0 Td (LLM-1 produced accurate frame-by-frame scene descriptions identifying player) Tj ET
+BT /F1 10 Tf 74 397.0 Td (positioning, ball movement, and goal celebration.) Tj ET
+BT /F1 10 Tf 74 385.0 Td (LLM-2 generated the following commentary \(excerpt\):) Tj ET
+BT /F1 10 Tf 74 361.0 Td ([00:00] The match is underway! Both sides are immediately pressing for possession in) Tj ET
+BT /F1 10 Tf 74 349.0 Td (what promises to be a fiercely contested encounter.) Tj ET
+BT /F1 10 Tf 74 337.0 Td ([00:10] A swift through-ball splits the defence ? the forward is clean through on goal!) Tj ET
+BT /F1 10 Tf 74 325.0 Td (The crowd holds its breath...) Tj ET
+BT /F1 10 Tf 74 313.0 Td ([00:20] GOAL! An absolutely stunning finish into the top corner! The stadium erupts as) Tj ET
+BT /F1 10 Tf 74 301.0 Td (Team A takes the lead!) Tj ET
+BT /F1 10 Tf 74 289.0 Td (SUMMARY: A clinical finish from Team A sealed a well-deserved goal in this exciting) Tj ET
+BT /F1 10 Tf 74 277.0 Td (encounter.) Tj ET
+BT /F2 10 Tf 64 265.0 Td (Performance Summary) Tj ET
+BT /F1 10 Tf 74 252.0 Td (| Metric                  | Live Mode     | Highlight Mode |) Tj ET
+BT /F1 10 Tf 74 240.0 Td (| Frame interval          | 3 seconds     | 10 seconds     |) Tj ET
+BT /F1 10 Tf 74 228.0 Td (| Max frames              | 60            | 20             |) Tj ET
+BT /F1 10 Tf 74 216.0 Td (| Avg. processing time    | ~3-5 min      | ~1-2 min       |) Tj ET
+BT /F1 10 Tf 74 204.0 Td (| LLM-1 \(per frame\)       | ~2-3 seconds  | ~2-3 seconds   |) Tj ET
+BT /F1 10 Tf 74 192.0 Td (| LLM-2 \(full script\)     | ~5-10 seconds | ~3-5 seconds   |) Tj ET
+BT /F1 10 Tf 74 180.0 Td (| Commentary accuracy     | High          | Moderate-High  |) Tj ET
+BT /F2 12 Tf 54 160.0 Td (6. Conclusion) Tj ET
+BT /F2 10 Tf 64 142.0 Td (Contributions) Tj ET
+BT /F1 10 Tf 74 129.0 Td (This project successfully demonstrates an automated sports commentary pipeline using a) Tj ET
+BT /F1 10 Tf 74 117.0 Td (two-LLM architecture. The system can process any sports video and generate engaging,) Tj ET
+BT /F1 10 Tf 74 105.0 Td (timestamped commentary without human intervention. The modular design allows easy) Tj ET
+BT /F1 10 Tf 74 93.0 Td (extension to different sports, languages, and model providers.) Tj ET
+BT /F2 10 Tf 64 81.0 Td (Future Extensions) Tj ET
+BT /F1 10 Tf 74 68.0 Td (1. Real-time streaming video support for live broadcasts. 2. Player and team recognition) Tj ET
+endstream
+endobj
+8 0 obj
+<<
+/Type /Page
+/Parent 2 0 R
+/MediaBox [0 0 612 792]
+/Contents 7 0 R
+/Resources <<
+  /Font <<
+    /F1 3 0 R
+    /F2 4 0 R
+  >>
+>>
+>>
+endobj
+9 0 obj
+<<
+/Length 415
+>>
+stream
+BT /F1 10 Tf 74 738.0 Td (using object detection models. 3. Integration with live score APIs for dynamic score) Tj ET
+BT /F1 10 Tf 74 726.0 Td (injection. 4. Fine-tuned language models on sport-specific commentary datasets. 5.) Tj ET
+BT /F1 10 Tf 74 714.0 Td (Multi-language commentary generation for international audiences. 6. Web-based dashboard) Tj ET
+BT /F1 10 Tf 74 702.0 Td (replacing the terminal UI.) Tj ET
+endstream
+endobj
+10 0 obj
+<<
+/Type /Page
+/Parent 2 0 R
+/MediaBox [0 0 612 792]
+/Contents 9 0 R
+/Resources <<
+  /Font <<
+    /F1 3 0 R
+    /F2 4 0 R
+  >>
+>>
+>>
+endobj
+xref
+0 11
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000128 00000 n 
+0000000198 00000 n 
+0000000273 00000 n 
+0000005145 00000 n 
+0000005293 00000 n 
+0000010416 00000 n 
+0000010564 00000 n 
+0000011030 00000 n 
+trailer
+<<
+/Size 11
+/Root 1 0 R
+>>
+startxref
+11179
+%%EOF
