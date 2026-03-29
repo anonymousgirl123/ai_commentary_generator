@@ -35,6 +35,7 @@ This project combines **computer vision + AI language models** to automatically 
 ---
 
 ## 🏗️ Architecture
+```
 Video Input
 ↓
 Frame Extraction (OpenCV)
@@ -46,7 +47,7 @@ LLM-2 (Gemini Pro) → Commentary Script
 TTS (Optional)
 ↓
 Output (Text + Audio)
-
+```
 ---
 
 ## 📦 Project Structure
@@ -115,8 +116,10 @@ Enter full video path
 Enter API key (skip if env variable is set)
 
 Step 2 – Commentary Mode
+```
 Highlight Mode (Default) → every 10s, faster
 Live Mode → every 3s, more detailed
+```
 
 Step 3 – Match Details
 ```
@@ -179,17 +182,17 @@ Metric	Live Mode	Highlight Mode
 ```Frame interval	3 seconds	10 seconds```
 Max frames	60	20
 Avg. processing time	```~3–5 min	~1–2 min```
-LLM-1 (per frame)	~2–3 sec	~2–3 sec
-LLM-2 (full script)	~5–10 sec	~3–5 sec
-Commentary accuracy	High	Moderate–High
+LLM-1 (per frame)	```~2–3 sec	~2–3 sec```
+LLM-2 (full script) ```	~5–10 sec	~3–5 sec ```
+Commentary accuracy	High	``` Moderate–High ```
 🧪 Sample Output
-[00:00] The match kicks off with high intensity.
+```[00:00] The match kicks off with high intensity.```
 
-[00:10] A brilliant through-ball breaks the defence — the striker is through!
+```[00:10] A brilliant through-ball breaks the defence — the striker is through!```
 
-[00:20] GOAL! A stunning finish into the top corner!
+```[00:20] GOAL! A stunning finish into the top corner!```
 
-SUMMARY: A clinical and well-deserved goal from Team A.
+SUMMARY: ```A clinical and well-deserved goal from Team A.```
 
 📤 Output
 Terminal → Timestamped commentary
@@ -202,12 +205,13 @@ Gemini 2.5 Flash → Vision (frame analysis)
 Gemini 2.5 Pro → Language (commentary generation)
 
 🔮 Future Improvements
-Real-time live streaming
+```Real-time live streaming
 Player & team detection
 Live score API integration
 Multi-language commentary
 Fine-tuned sports LLM
 Web-based dashboard
+```
 🤝 Contributing
 
 Pull requests are welcome. Feel free to fork and improve the project.
