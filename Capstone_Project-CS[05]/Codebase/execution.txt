@@ -1,0 +1,134 @@
+============================================================
+  Sports Commentator from Video  –  CS[05]
+  Execution Instructions
+============================================================
+
+--------------------------------------------------------------
+DEPENDENCIES  (install once)
+--------------------------------------------------------------
+pip install opencv-python google-genai python-dotenv
+
+--------------------------------------------------------------
+API KEY SETUP
+--------------------------------------------------------------
+Get a FREE Google AI Studio API key at:
+  https://aistudio.google.com/app/apikey
+
+Option A – pass as a CLI argument (recommended for quick tests):
+  --api_key YOUR_KEY_HERE
+
+Option B – set as an environment variable (recommended for safety):
+  Linux / macOS:
+    export GOOGLE_API_KEY="YOUR_KEY_HERE"
+  Windows CMD:
+    set GOOGLE_API_KEY=YOUR_KEY_HERE
+
+--------------------------------------------------------------
+OPTION A – INTERACTIVE DASHBOARD (Recommended)
+--------------------------------------------------------------
+python dashboard.py
+
+  Launches a colourful interactive terminal dashboard where you
+  can configure all settings step by step (no CLI flags needed).
+
+  HOW TO USE THE DASHBOARD:
+  ─────────────────────────
+  The dashboard walks you through 3 configuration steps:
+
+  STEP 1 – Video & API Setup
+    • Enter the full path to your sports video file.
+      Example: /Users/yourname/Downloads/match.mp4
+    • Enter your Google Gemini API key when prompted.
+      (Skip if GOOGLE_API_KEY is already set as an env variable.)
+
+  STEP 2 – Commentary Mode
+    • Choose between two modes:
+        1. highlight – Post-game style. Samples a frame every 10s,
+                       up to 20 frames. Faster and cheaper. (Default)
+        2. live      – Broadcast style. Samples a frame every 3s,
+                       up to 60 frames. More detailed, takes longer.
+    • Enter the number (1 or 2) and press Enter.
+      Press Enter alone to accept the default (highlight).
+
+  STEP 3 – Match Details
+    • Sport type  – e.g. football, basketball, cricket (default: football)
+    • Home team   – e.g. Manchester City          (default: Team A)
+    • Away team   – e.g. Arsenal                  (default: Team B)
+    • Context     – Optional. e.g. "Semi-final, score 1-0 at half time"
+                    Press Enter to skip.
+    • TTS         – Type y to enable text-to-speech (reads commentary
+                    aloud). Type n or press Enter to skip.
+    • Audio file  – If TTS enabled, optionally enter a filename to save
+                    audio. e.g. commentary.aiff  (press Enter to skip)
+    • Output file – Where to save the commentary text.
+                    Default: commentary_output.txt
+
+  CONFIRMATION
+    • Review the summary table showing all your chosen settings.
+    • Type y (or press Enter) to run the pipeline.
+    • Type n to go back and reconfigure.
+
+  PIPELINE PROGRESS
+    • The dashboard runs the pipeline and streams live progress
+      to the terminal showing frame extraction and LLM analysis.
+
+  VIEWING RESULTS
+    • After completion, the commentary is displayed in a formatted
+      panel with colour-coded timestamps ([MM:SS] in green).
+    • The full script is also saved to your chosen output file.
+
+  FEEDBACK
+    • Rate the commentary quality from 1–5 stars when prompted.
+    • Add an optional comment. Press Enter to skip.
+
+  RUN AGAIN
+    • Type y to run again with a new video or different settings.
+    • Type n to exit the dashboard.
+
+--------------------------------------------------------------
+OPTION B – DIRECT CLI (Advanced)
+--------------------------------------------------------------
+python main.py --video match.mp4 --api_key YOUR_KEY_HERE
+
+Full example with all options:
+python main.py \
+  --video       match.mp4          \
+  --api_key     YOUR_KEY_HERE      \
+  --mode        highlight          \
+  --sport       football           \
+  --team_a      "Manchester City"  \
+  --team_b      "Arsenal"          \
+  --context     "Champions League semi-final, 0-0 at kick-off" \
+  --output      commentary_output.txt \
+  --tts
+
+--------------------------------------------------------------
+ARGUMENT REFERENCE
+--------------------------------------------------------------
+  --video        (required) Path to the input video file
+  --api_key      Google Gemini API key (or use GOOGLE_API_KEY env var)
+  --mode         Commentary mode: 'live' or 'highlight'  [default: highlight]
+  --sport        Sport type in the video          [default: football]
+  --team_a       Name of the home / first team    [default: Team A]
+  --team_b       Name of the away / second team   [default: Team B]
+  --context      Extra context for the commentator (optional)
+  --interval     Seconds between keyframes         [default: 5.0]
+  --max_frames   Max keyframes to extract          [default: 40]
+  --output       Output text file path             [default: commentary_output.txt]
+  --save_scenes  Also save LLM-1 scene analysis to scene_analysis.json
+  --tts          (Optional) Convert commentary to speech using built-in TTS
+  --audio_output (Optional) File path to save TTS audio (macOS: .aiff format)
+
+--------------------------------------------------------------
+EXPECTED OUTPUT
+--------------------------------------------------------------
+  • Timestamped commentary printed to the terminal
+  • commentary_output.txt  – full commentary script saved to disk
+  • scene_analysis.json    – (optional) intermediate scene descriptions
+
+--------------------------------------------------------------
+MODELS USED
+--------------------------------------------------------------
+  LLM-1: gemini-2.5-flash  (multimodal – visual frame analysis)
+  LLM-2: gemini-2.5-pro    (language   – commentary generation)
+============================================================
