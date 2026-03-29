@@ -119,6 +119,7 @@ Highlight Mode (Default) → every 10s, faster
 Live Mode → every 3s, more detailed
 
 Step 3 – Match Details
+```
 Sport (default: football)
 Team A / Team B
 Context (optional)
@@ -135,6 +136,7 @@ Final commentary displayed + saved
 Feedback
 Rate (1–5 stars)
 Optional comment
+```
 💻 Option B – Direct CLI (Advanced)
 
 Basic:
@@ -152,9 +154,11 @@ Full Example:
   --context     "Semi-final, 0-0 at kick-off" \
   --output      commentary_output.txt \
   --tts
+```
 
 🧾 Arguments
 Argument	Description
+```
 --video	Input video path (required)
 --api_key	Gemini API key
 --mode	live / highlight
@@ -172,9 +176,9 @@ Argument	Description
 
 📊 Performance Summary
 Metric	Live Mode	Highlight Mode
-Frame interval	3 seconds	10 seconds
+```Frame interval	3 seconds	10 seconds```
 Max frames	60	20
-Avg. processing time	~3–5 min	~1–2 min
+Avg. processing time	```~3–5 min	~1–2 min```
 LLM-1 (per frame)	~2–3 sec	~2–3 sec
 LLM-2 (full script)	~5–10 sec	~3–5 sec
 Commentary accuracy	High	Moderate–High
