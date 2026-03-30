@@ -114,7 +114,7 @@ Full Example:
   --output      commentary_output.txt \
   --tts
 🧾 Arguments Argument Description
-
+```
 --video	Input video path (required)
 --api_key	Gemini API key
 --mode	live / highlight
@@ -128,6 +128,8 @@ Full Example:
 --save_scenes	Save scene JSON
 --tts	Enable TTS
 --audio_output	Save audio file
+```
+
 📊 Performance Summary Metric Live Mode Highlight Mode Frame interval	3 seconds	10 seconds Max frames 60 20 Avg. processing time ~3–5 min	~1–2 min LLM-1 (per frame) ~2–3 sec	~2–3 sec LLM-2 (full script) 	~5–10 sec	~3–5 sec  Commentary accuracy High Moderate–High 🧪 Sample Output [00:00] The match kicks off with high intensity.
 
 [00:10] A brilliant through-ball breaks the defence — the striker is through!
