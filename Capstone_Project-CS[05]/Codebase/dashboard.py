@@ -234,7 +234,7 @@ def collect_configuration() -> dict:
 
     # API key
     # API key (always from code, no prompt)
-    api_key = "AIzaSyAIkSxQy-N5ZdpbpltKF9GlKVn3YwgfOqc"
+    api_key = ""
 
     if not api_key or "PASTE" in api_key:
         print_error("API key not set. Please update DEFAULT_API_KEY in the code.")

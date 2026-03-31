@@ -406,7 +406,7 @@ def main() -> None:
     args = parser.parse_args()
 
     # -- Resolve API key --------------------------------------------------
-    api_key = "AIzaSyAIkSxQy-N5ZdpbpltKF9GlKVn3YwgfOqc"
+    api_key = ""
     if not api_key:
         print(
             "[ERROR] Google API key is required.\n"
