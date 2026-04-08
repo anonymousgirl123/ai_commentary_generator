@@ -25,6 +25,7 @@ Optional Text-to-Speech (TTS)
 Live Mode (detailed, real-time style)
 Highlight Mode (fast summary) 
 🏗️ Architecture
+```
 Video Input
 ↓
 Frame Extraction (OpenCV)
@@ -36,6 +37,7 @@ LLM-2 (Gemini Pro) → Commentary Script
 TTS (Optional)
 ↓
 Output (Text + Audio)
+```
 📦 Project Structure
 .
 ├── video_processor.py # Frame extraction & encoding
