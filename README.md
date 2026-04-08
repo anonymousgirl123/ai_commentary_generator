@@ -1,7 +1,7 @@
 🎙️ Sports Commentator from Video
 Capstone Project – CS[05]
 
-Demo : https://www.youtube.com/watch?v=oCRp2JzdnuA
+Demo: https://www.youtube.com/watch?v=oCRp2JzdnuA
 
 https://github.com/anonymousgirl123/ai_commentary_generator/wiki
 
@@ -23,7 +23,7 @@ Optional Text-to-Speech (TTS)
 🖥️ Interactive terminal dashboard
 ⚡ Two modes:
 Live Mode (detailed, real-time style)
-Highlight Mode (fast summary)
+Highlight Mode (fast summary) 
 🏗️ Architecture
 Video Input
 ↓
