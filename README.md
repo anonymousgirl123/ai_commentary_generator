@@ -1,7 +1,9 @@
 🎙️ Sports Commentator from Video
-Capstone Project – CS[05]
+Capstone Project
+
 
 Demo: https://www.youtube.com/watch?v=oCRp2JzdnuA
+
 
 https://github.com/anonymousgirl123/ai_commentary_generator/wiki
 
